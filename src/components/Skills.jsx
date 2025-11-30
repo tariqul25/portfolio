@@ -1,17 +1,17 @@
 import { motion } from "framer-motion";
 
 const skills = [
-  { name: "HTML", img: "/src/assets/skills/html.png" },
-  { name: "CSS", img: "/src/assets/skills/css3.png" },
-  { name: "JavaScript", img: "/src/assets/skills/js.png" },
-  { name: "TypeScript", img: "/src/assets/skills/typescript.png" },
-  { name: "React", img: "/src/assets/skills/react.png" },
-  { name: "NodeJS", img: "/src/assets/skills/nodejs.png" },
-  { name: "ExpressJS", img: "/src/assets/skills/express.png" },
-  { name: "MongoDB", img: "/src/assets/skills/mongodb.png" },
-  { name: "PostgreSQL", img: "/src/assets/skills/postgresql.png" },
-  { name: "Git", img: "/src/assets/skills/git.png" },
-  { name: "TailwindCSS", img: "/src/assets/skills/tailwindcss.png" },
+  { name: "HTML", img: "/skills/html.png" },
+  { name: "CSS", img: "/skills/css3.png" },
+  { name: "JavaScript", img: "/skills/js.png" },
+  { name: "TypeScript", img: "/skills/typescript.png" },
+  { name: "React", img: "/skills/react.png" },
+  { name: "NodeJS", img: "/skills/nodejs.png" },
+  { name: "ExpressJS", img: "/skills/express.png" },
+  { name: "MongoDB", img: "/skills/mongodb.png" },
+  { name: "PostgreSQL", img: "/skills/postgresql.png" },
+  { name: "Git", img: "/skills/git.png" },
+  { name: "TailwindCSS", img: "/skills/tailwindcss.png" },
 ];
 
 // Duplicate array only twice, not four times

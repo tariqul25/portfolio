@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Download, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
-import myPhoto from "../assets/profile.jpg";
+import myPhoto from "/assets/profile.jpg";
 
 const roles = [
   "Frontend Developer",
