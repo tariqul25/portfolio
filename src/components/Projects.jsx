@@ -8,8 +8,8 @@ const Projects = () => {
       description:
         "A community platform for gardening enthusiasts to share tips, find local gardeners, post events, and connect with others.",
       image:
-        "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=500&fit=crop",
-      tech: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB","Firebase"],
+        "https://i.ibb.co/3YddhBYY/Screenshot-161.png",
+      tech: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB", "Firebase"],
       liveUrl: "https://garden-guidance.web.app/",
       githubUrl: "https://github.com/tariqul25/Garden-Guidance",
     },
@@ -17,8 +17,8 @@ const Projects = () => {
       title: "Historical-Artifacts ",
       description:
         "A full-stack web app for browsing, adding, and managing historical artifacts with secure authentication and a like system.",
-      image: "https://i.ibb.co/Z1YYCNQ8/01.jpg",
-      tech: ["JavaScript", "React", "Tailwind CSS", "Node.js", "Express","JWT", "MongoDB","Firebase"],
+      image: "https://i.ibb.co/Z1FmHjcP/Screenshot-162.png",
+      tech: ["JavaScript", "React", "Tailwind CSS", "Node.js", "Express", "JWT", "MongoDB", "Firebase"],
       liveUrl: "https://artifact-atlas-e6058.web.app/",
       githubUrl: "https://github.com/tariqul25/Historical-Artifacts-Client",
     },
@@ -27,8 +27,8 @@ const Projects = () => {
       description:
         "SwiftTasks — a MERN-based platform where Buyers can create small tasks and Workers can earn coins by completing them. It also features an Admin role to oversee users, tasks, payments, and withdrawals.",
       image:
-        "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&h=500&fit=crop",
-      tech: ["React", "Tailwind CSS","Node.js", "Express","JavaScript", "MongoDB","JWT","Firebase"],
+        "https://i.ibb.co/vvVy3M5V/Screenshot-2025-12-01-103732.png",
+      tech: ["React", "Tailwind CSS", "Node.js", "Express", "JavaScript", "MongoDB", "JWT", "Firebase"],
       liveUrl: "https://swift-tasks-87d89.web.app/",
       githubUrl: "https://github.com/tariqul25/swift-task",
     },
@@ -37,7 +37,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Title */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
