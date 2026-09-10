@@ -1,5 +1,6 @@
 import { Code2, Server, ShoppingBag, Sparkles } from 'lucide-react';
 import { useGsapCardTilt, useGsapReveal } from '../../hooks/useGsap';
+import { ArrowSlider } from '../ui/ArrowSlider';
 
 const cards = [
   [
@@ -40,7 +41,7 @@ function AboutCard({
   return (
     <div
       ref={tiltRef}
-      className="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 hover:border-violet-500/50 hover:shadow-xl transition-all duration-200 flex flex-col justify-between"
+      className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 hover:border-violet-500/50 hover:shadow-xl transition-all duration-200 flex flex-col justify-between h-full shadow-lg"
     >
       <div>
         <div className="w-10 h-10 rounded-xl bg-slate-800/90 border border-slate-700/60 flex items-center justify-center mb-4 text-violet-400">
@@ -50,7 +51,7 @@ function AboutCard({
           0{index + 1}
         </span>
         <h3 className="text-base font-bold text-white mb-2">{title}</h3>
-        <p className="text-xs text-slate-400 leading-relaxed">{desc}</p>
+        <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">{desc}</p>
       </div>
     </div>
   );
@@ -98,7 +99,8 @@ export function About() {
           </div>
 
           <div ref={rightColRef}>
-            <div className="grid sm:grid-cols-2 gap-4">
+            {/* Desktop View: 2x2 Grid */}
+            <div className="hidden md:grid sm:grid-cols-2 gap-4">
               {cards.map(([title, desc, Icon], i) => (
                 <AboutCard
                   key={title}
@@ -109,9 +111,25 @@ export function About() {
                 />
               ))}
             </div>
+
+            {/* Mobile View: Arrow Navigation Slider */}
+            <div className="md:hidden">
+              <ArrowSlider accentColor="violet">
+                {cards.map(([title, desc, Icon], i) => (
+                  <AboutCard
+                    key={title}
+                    title={title}
+                    desc={desc}
+                    Icon={Icon}
+                    index={i}
+                  />
+                ))}
+              </ArrowSlider>
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
 }
+

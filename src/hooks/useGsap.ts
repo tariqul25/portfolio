@@ -45,12 +45,18 @@ export function useGsapReveal<T extends HTMLElement = HTMLDivElement>(
       ease: 'power3.out',
     };
 
-    if (from === 'bottom') fromVars.y = distance;
-    else if (from === 'left') fromVars.x = -distance;
-    else if (from === 'right') fromVars.x = distance;
-    else if (from === 'scale') {
-      fromVars.scale = 0.92;
-      fromVars.y = 25;
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
+    if (isMobile) {
+      fromVars.y = Math.min(distance, 25);
+    } else {
+      if (from === 'bottom') fromVars.y = distance;
+      else if (from === 'left') fromVars.x = -distance;
+      else if (from === 'right') fromVars.x = distance;
+      else if (from === 'scale') {
+        fromVars.scale = 0.92;
+        fromVars.y = 25;
+      }
     }
 
     gsap.set(el, fromVars);
