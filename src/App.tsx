@@ -15,11 +15,11 @@ import './index.css';
 
 function App() {
   return (
-    <>
+    <div className="relative min-h-screen overflow-x-hidden max-w-full">
       <ScrollProgressBar />
       <CursorEffect />
       <Navbar />
-      <main>
+      <main className="overflow-x-hidden max-w-full">
         <Hero />
         <About />
         <Projects />
@@ -31,7 +31,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

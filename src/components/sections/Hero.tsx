@@ -48,16 +48,16 @@ export function Hero() {
       </div>
 
       <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12">
-        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-14 items-center py-8 sm:py-14">
-          {/* Content */}
+        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-14 items-center py-6 sm:py-12">
+          {/* Content (Ordered second on mobile, first on desktop) */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="max-w-2xl"
+            className="max-w-2xl order-2 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left"
           >
             {/* Status badge */}
-            <motion.div variants={itemVariants} className="mb-6">
+            <motion.div variants={itemVariants} className="mb-5 sm:mb-6">
               <span className="inline-flex items-center gap-2 text-xs font-semibold text-slate-300 border border-slate-700/80 px-3.5 py-1.5 rounded-full bg-slate-900/80 shadow-sm backdrop-blur-xs">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true" />
                 Available for Full-Stack &amp; Shopify Projects
@@ -67,39 +67,44 @@ export function Hero() {
             {/* Main heading */}
             <motion.h1
               variants={itemVariants}
-              className="text-[clamp(2.8rem,5.5vw,4.8rem)] font-extrabold leading-[1.08] tracking-tight text-white mb-3"
+              className="text-[clamp(2.4rem,5vw,4.2rem)] font-extrabold leading-[1.12] tracking-tight text-white mb-3 text-center lg:text-left lg:whitespace-nowrap"
             >
-              Md. Tariqul
-              <br />
+              <span className="text-white">Md. </span>
               <span className="bg-gradient-to-r from-violet-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">
-                Islam
+                Tariqul
               </span>
+              <br className="lg:hidden" />{' '}
+              <span className="text-white">Islam</span>
             </motion.h1>
 
             {/* Animated role */}
-            <motion.div variants={itemVariants} className="mb-5 h-9 flex items-center">
+            <motion.div variants={itemVariants} className="mb-5 h-9 flex items-center justify-center lg:justify-start w-full">
               <AnimatedRole />
             </motion.div>
 
             {/* Intro quote */}
             <motion.p
               variants={itemVariants}
-              className="text-lg sm:text-xl text-slate-300 italic mb-4 font-light tracking-wide"
+              className="text-base sm:text-xl text-slate-300 italic mb-4 font-light tracking-wide max-w-lg"
             >
               "Coding interactive experiences with passion and precision"
             </motion.p>
 
-
             {/* Supporting paragraph */}
             <motion.p
               variants={itemVariants}
-              className="text-slate-400 leading-relaxed mb-8 max-w-lg text-sm sm:text-base"
+              className="text-slate-400 leading-relaxed mb-8 max-w-xl text-sm sm:text-base mx-auto lg:mx-0"
             >
-              Passionate about crafting high-performance web experiences using <span className="font-semibold text-slate-200">React, Next.js</span> and <span className="font-semibold text-slate-200">Node.js</span> — with deep expertise in custom <span className="font-semibold text-slate-200">Shopify Liquid</span> theme development for global brands.
+              Passionate about crafting high-performance web experiences using{' '}
+              <br className="hidden md:block" />
+              <span className="font-semibold text-slate-200">TypeScript, React, Next.js</span> and{' '}
+              <span className="font-semibold text-slate-200">Node.js</span> — with deep expertise in custom{' '}
+              <br className="hidden md:block" />
+              <span className="font-semibold text-slate-200">Shopify Liquid</span> theme development for global brands.
             </motion.p>
 
             {/* CTAs with GSAP Magnetic Hover */}
-            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-3 mb-8">
+            <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-8">
               <Magnetic strength={0.32}>
                 <a
                   href="#work"
@@ -113,20 +118,6 @@ export function Hero() {
                   <ArrowDown size={15} />
                 </a>
               </Magnetic>
-
-              {/* <Magnetic strength={0.32}>
-                <a
-                  href="#shopify"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.querySelector('#shopify')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold bg-emerald-950/60 text-emerald-300 border border-emerald-700/60 rounded-lg hover:bg-emerald-900/60 active:scale-[0.98] transition-all duration-200 cursor-pointer"
-                >
-                  <ShoppingBag size={15} className="text-emerald-400" />
-                  Shopify Showcase
-                </a>
-              </Magnetic> */}
 
               <Magnetic strength={0.32}>
                 <a
@@ -143,7 +134,7 @@ export function Hero() {
             </motion.div>
 
             {/* Social links with GSAP Magnetic Hover */}
-            <motion.div variants={itemVariants} className="flex items-center gap-2.5">
+            <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
               <Magnetic strength={0.25}>
                 <a
                   href="https://github.com/tariqul25"
@@ -168,22 +159,22 @@ export function Hero() {
                 </a>
               </Magnetic>
 
-              <div className="ml-2 w-px h-5 bg-slate-800" aria-hidden="true" />
+              <div className="ml-2 w-px h-5 bg-slate-800 hidden sm:block" aria-hidden="true" />
               <a
                 href="mailto:tariqulcst@gmail.com"
-                className="text-xs font-medium text-slate-400 hover:text-violet-400 transition-colors ml-2"
+                className="text-xs font-medium text-slate-400 hover:text-violet-400 transition-colors ml-0 sm:ml-2 mt-2 sm:mt-0 w-full sm:w-auto text-center"
               >
                 tariqulcst@gmail.com
               </a>
             </motion.div>
           </motion.div>
 
-          {/* Hero visual — Circular Animated Avatar with Tech Stack Orbit */}
+          {/* Hero visual — Circular Animated Avatar with Tech Stack Orbit (Ordered first on mobile) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.94, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.75, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="flex items-center justify-center relative"
+            transition={{ duration: 0.75, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
+            className="flex items-center justify-center relative order-1 lg:order-2 w-full py-2"
           >
             <HeroVisual />
           </motion.div>
@@ -199,7 +190,7 @@ function HeroVisual() {
   return (
     <div
       ref={tiltRef}
-      className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 select-none group flex items-center justify-center my-8 lg:my-0"
+      className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 select-none group flex items-center justify-center my-6 lg:my-0 mx-auto"
       style={{ transformStyle: 'preserve-3d' }}
     >
       {/* 1. Ambient pulsing background glow */}
@@ -209,12 +200,12 @@ function HeroVisual() {
       <motion.div
         animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.08, 0.4] }}
         transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-        className="absolute -inset-4 sm:-inset-6 rounded-full border border-violet-500/30 pointer-events-none"
+        className="absolute -inset-3 sm:-inset-6 rounded-full border border-violet-500/30 pointer-events-none"
       />
 
       {/* 3. Reverse rotating dashed orbit ring with glowing celestial beacons */}
       <div
-        className="absolute -inset-6 sm:-inset-8 rounded-full border border-dashed border-slate-700/60 pointer-events-none animate-[spin_24s_linear_infinite_reverse]"
+        className="absolute -inset-5 sm:-inset-8 rounded-full border border-dashed border-slate-700/60 pointer-events-none animate-[spin_24s_linear_infinite_reverse]"
       >
         <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-violet-400 shadow-[0_0_12px_#a855f7]" />
         <span className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_10px_#22d3ee]" />
@@ -241,7 +232,7 @@ function HeroVisual() {
       <motion.div
         animate={{ y: [0, -6, 0] }}
         transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-        className="absolute -top-3 -left-2 sm:-left-5 z-20 bg-slate-900/90 border border-blue-500/40 shadow-lg shadow-blue-950/40 px-3 py-1.5 rounded-full flex items-center gap-1.5 text-xs font-semibold text-blue-300 backdrop-blur-md"
+        className="absolute -top-3 -left-1 sm:-left-5 z-20 bg-slate-900/90 border border-blue-500/40 shadow-lg shadow-blue-950/40 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold text-blue-300 backdrop-blur-md"
       >
         <Code2 size={13} className="text-blue-400" />
         <span>TypeScript</span>
@@ -251,7 +242,7 @@ function HeroVisual() {
       <motion.div
         animate={{ y: [0, -6, 0] }}
         transition={{ repeat: Infinity, duration: 3.6, ease: 'easeInOut', delay: 0.3 }}
-        className="absolute -top-3 -right-2 sm:-right-5 z-20 bg-slate-900/90 border border-cyan-500/40 shadow-lg shadow-cyan-950/40 px-3 py-1.5 rounded-full flex items-center gap-1.5 text-xs font-semibold text-cyan-300 backdrop-blur-md"
+        className="absolute -top-3 -right-1 sm:-right-5 z-20 bg-slate-900/90 border border-cyan-500/40 shadow-lg shadow-cyan-950/40 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold text-cyan-300 backdrop-blur-md"
       >
         <Atom size={13} className="text-cyan-400" />
         <span>React</span>
@@ -261,7 +252,7 @@ function HeroVisual() {
       <motion.div
         animate={{ x: [0, -5, 0] }}
         transition={{ repeat: Infinity, duration: 4.2, ease: 'easeInOut', delay: 0.6 }}
-        className="absolute top-1/2 -left-6 sm:-left-10 -translate-y-1/2 z-20 bg-slate-900/90 border border-emerald-500/40 shadow-lg shadow-emerald-950/40 px-3 py-1.5 rounded-full flex items-center gap-1.5 text-xs font-semibold text-emerald-300 backdrop-blur-md"
+        className="absolute top-1/2 -left-3 sm:-left-10 -translate-y-1/2 z-20 bg-slate-900/90 border border-emerald-500/40 shadow-lg shadow-emerald-950/40 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold text-emerald-300 backdrop-blur-md"
       >
         <Database size={13} className="text-emerald-400" />
         <span>MongoDB</span>
@@ -271,7 +262,7 @@ function HeroVisual() {
       <motion.div
         animate={{ x: [0, 5, 0] }}
         transition={{ repeat: Infinity, duration: 3.8, ease: 'easeInOut', delay: 0.9 }}
-        className="absolute top-1/2 -right-6 sm:-right-10 -translate-y-1/2 z-20 bg-slate-900/90 border border-lime-500/40 shadow-lg shadow-lime-950/40 px-3 py-1.5 rounded-full flex items-center gap-1.5 text-xs font-semibold text-lime-300 backdrop-blur-md"
+        className="absolute top-1/2 -right-3 sm:-right-10 -translate-y-1/2 z-20 bg-slate-900/90 border border-lime-500/40 shadow-lg shadow-lime-950/40 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold text-lime-300 backdrop-blur-md"
       >
         <Server size={13} className="text-lime-400" />
         <span>Node.js</span>
@@ -281,7 +272,7 @@ function HeroVisual() {
       <motion.div
         animate={{ y: [0, 5, 0] }}
         transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut', delay: 0.4 }}
-        className="absolute -bottom-4 left-1/2 -translate-x-1/2 z-20 bg-slate-900/95 border border-violet-500/40 shadow-lg shadow-violet-950/40 px-3.5 py-1.5 rounded-full flex items-center gap-1.5 text-xs font-semibold text-violet-300 backdrop-blur-md whitespace-nowrap"
+        className="absolute -bottom-4 left-1/2 -translate-x-1/2 z-20 bg-slate-900/95 border border-violet-500/40 shadow-lg shadow-violet-950/40 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold text-violet-300 backdrop-blur-md whitespace-nowrap"
       >
         <ShoppingBag size={13} className="text-violet-400" />
         <span>Shopify Liquid</span>

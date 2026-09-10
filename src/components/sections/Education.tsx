@@ -1,6 +1,7 @@
 import { GraduationCap, CalendarDays, Award } from 'lucide-react';
 import { education } from '../../data/experience';
 import { useGsapCardTilt, useGsapDeepScrollCard, useGsapReveal } from '../../hooks/useGsap';
+import { PillDotSlider } from '../ui/PillDotSlider';
 
 function EducationCard({
   item,
@@ -85,12 +86,23 @@ export function Education() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
+        {/* Desktop View: 2-Column Grid */}
+        <div className="hidden md:grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
           {education.map((item, i) => (
             <EducationCard key={item.institution} item={item} index={i} />
           ))}
+        </div>
+
+        {/* Mobile View: Auto-scrolling Pill Dot Slider */}
+        <div className="md:hidden max-w-lg mx-auto">
+          <PillDotSlider autoPlayInterval={4000} accentColor="violet">
+            {education.map((item, i) => (
+              <EducationCard key={item.institution} item={item} index={i} />
+            ))}
+          </PillDotSlider>
         </div>
       </div>
     </section>
   );
 }
+

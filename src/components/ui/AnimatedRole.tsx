@@ -45,7 +45,7 @@ export function AnimatedRole() {
 
   if (prefersReducedMotion) {
     return (
-      <span className="text-[#7C3AED] font-bold text-xl sm:text-2xl">
+      <span className="text-[#7C3AED] font-bold text-xl sm:text-2xl text-center lg:text-left">
         {roles[current]}
       </span>
     );
@@ -64,7 +64,7 @@ export function AnimatedRole() {
 
   return (
     <span
-      className="inline-block text-[#7C3AED] font-bold text-xl sm:text-2xl"
+      className="inline-block text-[#7C3AED] font-bold text-xl sm:text-2xl text-center lg:text-left"
       style={{
         opacity: getOpacity(),
         transform: getTransform(),
@@ -74,9 +74,7 @@ export function AnimatedRole() {
             : phase === 'entering'
             ? 'none'
             : `opacity ${TRANSITION_DURATION}ms cubic-bezier(0.22, 1, 0.36, 1), transform ${TRANSITION_DURATION}ms cubic-bezier(0.22, 1, 0.36, 1)`,
-        minWidth: '280px',
         display: 'inline-block',
-        textAlign: 'left',
       }}
       aria-live="polite"
       aria-label={`Current role: ${roles[current]}`}

@@ -2,6 +2,8 @@ import { CheckCircle2, ExternalLink, ShoppingBag, KeyRound, ArrowRight, Zap } fr
 import { shopifyCapabilities } from '../../data/skills';
 import { useGsapCardTilt, useGsapDeepScrollCard, useGsapReveal, useGsapStagger } from '../../hooks/useGsap';
 import { Magnetic } from '../ui/MagneticButton';
+import { ArrowSlider } from '../ui/ArrowSlider';
+import { PillDotSlider } from '../ui/PillDotSlider';
 
 interface StoreItem {
   client: string;
@@ -198,10 +200,20 @@ export function ShopifyExpertise() {
         </div>
 
         {/* 1. Core Capabilities with GSAP Staggered Scroll Entrance & 3D Tilt */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
+        {/* Desktop View: Grid */}
+        <div className="hidden md:grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
           {shopifyCapabilities.map((item, i) => (
             <CapabilityCard key={item.label} item={item} index={i} />
           ))}
+        </div>
+
+        {/* Mobile View: Arrow Navigation Slider */}
+        <div className="md:hidden mb-16">
+          <ArrowSlider accentColor="emerald">
+            {shopifyCapabilities.map((item, i) => (
+              <CapabilityCard key={item.label} item={item} index={i} />
+            ))}
+          </ArrowSlider>
         </div>
 
         {/* 2. Client Storefronts Header with Scroll Reveal */}
@@ -220,8 +232,8 @@ export function ShopifyExpertise() {
           </div>
         </div>
 
-        {/* 2. Client Storefronts Grid with GSAP 3D Scroll Entrance and Tilt */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+        {/* 2. Client Storefronts Grid - Vertical stack on mobile, multi-column on desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {stores.map((store, idx) => (
             <StoreCard key={store.title} store={store} index={idx} />
           ))}
@@ -252,7 +264,9 @@ export function ShopifyExpertise() {
                 <p className="text-slate-300 text-sm leading-relaxed mb-8">
                   Engineered custom client-side quiz logic embedded directly inside Shopify theme files. Responses synchronize with customer records in real time, triggering targeted email flows in Klaviyo based on stress index scores.
                 </p>
-                <div ref={caseStudyStatsRef} className="grid sm:grid-cols-3 gap-4">
+
+                {/* Case study 3 cards - Desktop View: 3-column Grid */}
+                <div ref={caseStudyStatsRef} className="hidden sm:grid sm:grid-cols-3 gap-4">
                   <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-4 hover:border-emerald-500/40 hover:bg-slate-900 transition-all duration-300">
                     <h4 className="font-bold text-emerald-400 text-xs uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
@@ -280,6 +294,41 @@ export function ShopifyExpertise() {
                       High completion rates, seamless onboarding, and automated segmented marketing workflows.
                     </p>
                   </div>
+                </div>
+
+                {/* Case study 3 cards - Mobile View: Auto-scrolling Pill Dot Slider */}
+                <div className="sm:hidden mb-6">
+                  <PillDotSlider autoPlayInterval={3500} accentColor="emerald">
+                    <div className="bg-slate-900/95 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/40 transition-all duration-300 h-full flex flex-col justify-center">
+                      <h4 className="font-bold text-emerald-400 text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                        Client Goal
+                      </h4>
+                      <p className="text-xs text-slate-300 leading-relaxed">
+                        Interactive healthcare assessment capturing leads directly into Klaviyo without disrupting checkout.
+                      </p>
+                    </div>
+
+                    <div className="bg-slate-900/95 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/40 transition-all duration-300 h-full flex flex-col justify-center">
+                      <h4 className="font-bold text-emerald-400 text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                        Technical Solution
+                      </h4>
+                      <p className="text-xs text-slate-300 leading-relaxed">
+                        Multi-step custom Liquid &amp; JS quiz with dynamic branching and custom Klaviyo profile properties.
+                      </p>
+                    </div>
+
+                    <div className="bg-slate-900/95 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/40 transition-all duration-300 h-full flex flex-col justify-center">
+                      <h4 className="font-bold text-emerald-400 text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                        Outcome
+                      </h4>
+                      <p className="text-xs text-slate-300 leading-relaxed">
+                        High completion rates, seamless onboarding, and automated segmented marketing workflows.
+                      </p>
+                    </div>
+                  </PillDotSlider>
                 </div>
               </div>
 

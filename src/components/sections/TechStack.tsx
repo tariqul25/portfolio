@@ -1,6 +1,7 @@
 import { Code2, Server, ShieldCheck, ShoppingBag } from 'lucide-react';
 import { techStack } from '../../data/skills';
 import { useGsapCardTilt, useGsapReveal } from '../../hooks/useGsap';
+import { PillDotSlider } from '../ui/PillDotSlider';
 
 const iconMap: Record<string, typeof Code2> = {
   Frontend: Code2,
@@ -99,13 +100,23 @@ export function TechStack() {
           </p>
         </div>
 
-        {/* 2-Column with 2-Row Balanced Equal-Height Grid with GSAP Entrance & Tilt */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto items-stretch">
+        {/* Desktop View: 2-Column Grid */}
+        <div className="hidden md:grid md:grid-cols-2 gap-6 max-w-4xl mx-auto items-stretch">
           {techStack.map((group, i) => (
             <TechCard key={group.name} group={group} index={i} />
           ))}
+        </div>
+
+        {/* Mobile View: Auto-scrolling Pill Dot Slider */}
+        <div className="md:hidden max-w-lg mx-auto">
+          <PillDotSlider autoPlayInterval={3800} accentColor="violet">
+            {techStack.map((group, i) => (
+              <TechCard key={group.name} group={group} index={i} />
+            ))}
+          </PillDotSlider>
         </div>
       </div>
     </section>
   );
 }
+
