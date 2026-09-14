@@ -159,19 +159,6 @@ export function Navbar() {
             className="fixed inset-0 z-40 bg-[#0B0F17]/98 backdrop-blur-xl flex flex-col pt-[76px] pb-8 px-5 sm:px-8 md:hidden overflow-y-auto"
           >
             <div className="mx-auto w-full max-w-[1280px]">
-              {/* Optional Close helper button inside drawer */}
-              <div className="flex items-center justify-between pb-3 mb-2 border-b border-slate-800/80">
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Navigation Menu</span>
-                <button
-                  type="button"
-                  onClick={() => setOpen(false)}
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-rose-400 hover:text-rose-300 bg-rose-950/50 border border-rose-800/60 px-2.5 py-1 rounded-lg cursor-pointer"
-                >
-                  <X size={14} />
-                  <span>Close</span>
-                </button>
-              </div>
-
               <ul className="flex flex-col gap-1 py-2">
                 {links.map(([label, href]) => (
                   <li key={href}>
