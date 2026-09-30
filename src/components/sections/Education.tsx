@@ -71,7 +71,7 @@ export function Education() {
   return (
     <section
       id="education"
-      className="py-18 sm:py-22 lg:py-24 border-t border-slate-800/80 bg-slate-950/20 relative z-10"
+      className="py-20 sm:py-24 lg:py-28 border-t border-slate-800/80 bg-slate-950/20 relative z-10"
     >
       <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12">
         <div ref={headerRef} className="mb-10 sm:mb-12">

@@ -161,10 +161,10 @@ export function Hero() {
 
               <div className="ml-2 w-px h-5 bg-slate-800 hidden sm:block" aria-hidden="true" />
               <a
-                href="mailto:tariqulcst@gmail.com"
+                href="mailto:tariqulwebdev@gmail.com"
                 className="text-xs font-medium text-slate-400 hover:text-violet-400 transition-colors ml-0 sm:ml-2 mt-2 sm:mt-0 w-full sm:w-auto text-center"
               >
-                tariqulcst@gmail.com
+                tariqulwebdev@gmail.com
               </a>
             </motion.div>
           </motion.div>

@@ -3,10 +3,11 @@ import { GithubIcon, LinkedinIcon, FacebookIcon } from '../ui/Icons';
 
 const links: Array<[string, string]> = [
   ['About', '#about'],
+  ['Skills', '#expertise'],
   ['Projects', '#work'],
   ['Shopify', '#shopify'],
   ['Experience', '#experience'],
-  ['Skills', '#stack'],
+  ['Education', '#education'],
   ['Contact', '#contact'],
 ];
 
@@ -91,11 +92,11 @@ export function Footer() {
             <ul className="space-y-2.5 text-xs">
               <li>
                 <a
-                  href="mailto:tariqulcst@gmail.com"
+                  href="mailto:tariqulwebdev@gmail.com"
                   className="flex items-center gap-2 text-slate-400 hover:text-violet-400 transition-colors"
                 >
                   <Mail size={13} className="text-violet-400" />
-                  tariqulcst@gmail.com
+                  tariqulwebdev@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-2 text-slate-400">

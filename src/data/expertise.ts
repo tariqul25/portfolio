@@ -14,7 +14,7 @@ export const expertiseAreas: ExpertiseArea[] = [
     tagline: 'Primary Specialization',
     description:
       'Crafting responsive, performant, and accessible user interfaces. I think in components, design for interaction, and write code that scales.',
-    skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Responsive UI', 'Component Architecture'],
+    skills: ['JavaScript', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Responsive UI', 'Component Architecture'],
     primary: true,
   },
   {
@@ -31,7 +31,7 @@ export const expertiseAreas: ExpertiseArea[] = [
     tagline: 'E-commerce Solutions',
     description:
       'Developing and customizing Shopify storefronts with Liquid, building custom sections, and integrating third-party apps and marketing tools.',
-    skills: ['Liquid', 'Theme Development', 'Custom Sections', 'App Integration', 'Klaviyo'],
+    skills: ['Liquid Templating', 'Theme Development', 'Theme Customization', 'Custom Sections', 'App Integration', 'Klaviyo'],
   },
   {
     id: 'marketing-automation',

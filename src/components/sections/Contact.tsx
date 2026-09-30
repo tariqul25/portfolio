@@ -11,7 +11,7 @@ export function Contact() {
   const [copied, setCopied] = useState(false);
 
   const copyEmail = () => {
-    navigator.clipboard.writeText('tariqulcst@gmail.com');
+    navigator.clipboard.writeText('tariqulwebdev@gmail.com');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -65,7 +65,7 @@ export function Contact() {
               <div className="pt-8 flex flex-wrap items-center gap-3.5">
                 <Magnetic strength={0.32}>
                   <a
-                    href="mailto:tariqulcst@gmail.com"
+                    href="mailto:tariqulwebdev@gmail.com"
                     className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold bg-violet-600 text-white rounded-xl hover:bg-violet-500 shadow-md hover:shadow-violet-600/30 transition-all duration-200 cursor-pointer"
                   >
                     <Mail size={15} />
@@ -112,10 +112,10 @@ export function Contact() {
                         Direct Email
                       </span>
                       <a
-                        href="mailto:tariqulcst@gmail.com"
+                        href="mailto:tariqulwebdev@gmail.com"
                         className="text-xs font-bold text-white hover:text-violet-400 transition-colors truncate block"
                       >
-                        tariqulcst@gm...
+                        tariqulwebdev@gmail.com
                       </a>
                     </div>
                     <button
