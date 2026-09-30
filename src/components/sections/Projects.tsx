@@ -37,11 +37,11 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       ? 'rgba(139,92,246,0.18)'
       : 'rgba(245,158,11,0.15)';
 
-  const domainLabel = isGarden
+    const domainLabel = isGarden
     ? 'garden-guidance.web.app'
     : isTasks
       ? 'swift-tasks-87d89.web.app'
-      : 'historical-artifacts-8b68f.web.app';
+      : 'artifact-atlas-e6058.web.app';
 
   return (
     <article
@@ -212,7 +212,7 @@ export function Projects() {
   });
 
   return (
-    <section id="work" className="py-16 sm:py-20 lg:py-24 border-t border-slate-800/80 bg-slate-950/20 relative z-10">
+    <section id="work" className="py-20 sm:py-24 lg:py-28 border-t border-slate-800/80 bg-slate-950/20 relative z-10">
       <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12">
         <div ref={headerRef} className="mb-10 sm:mb-12">
           <span className="inline-flex text-[11px] uppercase tracking-[.16em] font-semibold text-violet-400 bg-violet-950/60 border border-violet-700/60 px-3 py-1 rounded-full">

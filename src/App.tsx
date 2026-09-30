@@ -8,7 +8,6 @@ import { ShopifyExpertise } from './components/sections/ShopifyExpertise';
 import { Experience } from './components/sections/Experience';
 import { Education } from './components/sections/Education';
 import { Expertise } from './components/sections/Expertise';
-import { TechStack } from './components/sections/TechStack';
 import { Contact } from './components/sections/Contact';
 import { Footer } from './components/sections/Footer';
 import './index.css';
@@ -22,12 +21,11 @@ function App() {
       <main className="overflow-x-hidden max-w-full">
         <Hero />
         <About />
+        <Expertise />
         <Projects />
         <ShopifyExpertise />
         <Experience />
         <Education />
-        <Expertise />
-        <TechStack />
         <Contact />
       </main>
       <Footer />

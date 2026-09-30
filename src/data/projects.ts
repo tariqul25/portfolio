@@ -49,8 +49,8 @@ export const projects: Project[] = [
     serverRepo: 'https://github.com/tariqul25/swift-tasks-server',
   },
   {
-    id: 'historical',
-    title: 'Historical Artifacts Tracker',
+    id: 'artifact-atlas',
+    title: 'Artifact Atlas',
     description:
       'A full-stack web app for browsing, adding, and managing historical artifacts with secure authentication and a like system.',
     technologies: ['JavaScript', 'React', 'Tailwind CSS', 'Node.js', 'Express', 'JWT', 'MongoDB', 'Firebase'],
@@ -59,10 +59,10 @@ export const projects: Project[] = [
     image: '/projects/historical.jpg',
     badge: 'Curated History Portal',
     ctaLabel: 'Live Preview',
-    ctaUrl: 'https://historical-artifacts-8b68f.web.app/',
-    githubUrl: 'https://github.com/tariqul25/historical-artifacts',
-    clientRepo: 'https://github.com/tariqul25/historical-artifacts',
-    serverRepo: 'https://github.com/tariqul25/historical-artifacts-server',
+    ctaUrl: 'https://artifact-atlas-e6058.web.app/',
+    githubUrl: 'https://github.com/tariqul25/Historical-Artifacts-Client',
+    clientRepo: 'https://github.com/tariqul25/Historical-Artifacts-Client',
+    serverRepo: 'https://github.com/tariqul25/Historical-Artifacts-Server',
   },
 ];
 
