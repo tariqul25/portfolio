@@ -44,11 +44,19 @@ function useActiveSection() {
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const active = useActiveSection();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalScroll > 0) {
+        setScrollProgress(Math.min(100, Math.max(0, (window.scrollY / totalScroll) * 100)));
+      }
+    };
     window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -148,6 +156,14 @@ export function Navbar() {
               {open ? <X size={22} className="stroke-[2.5]" /> : <Menu size={20} />}
             </button>
           </nav>
+        </div>
+
+        {/* Scrolling green line right underneath the portfolio header */}
+        <div className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-transparent overflow-hidden pointer-events-none">
+          <div
+            className="h-full bg-gradient-to-r from-emerald-500 via-green-400 to-teal-300 shadow-[0_0_12px_rgba(16,185,129,0.95)] transition-[width] duration-75 ease-out"
+            style={{ width: `${scrollProgress}%` }}
+          />
         </div>
       </header>
 
