@@ -125,7 +125,7 @@ export function Navbar() {
 
             <div className="hidden md:flex items-center gap-3">
               <a
-                href="/cv/Md-Tariqul-Islam-CV.pdf"
+                href="/cv/Tariqul-Resume.pdf"
                 download
                 className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-slate-200 bg-slate-900/80 border border-slate-700/80 rounded-lg hover:border-violet-500/60 hover:text-violet-300 transition-all"
               >
@@ -180,7 +180,7 @@ export function Navbar() {
               </ul>
               <div className="mt-8 pt-6 border-t border-slate-800/80 w-full">
                 <a
-                  href="/cv/Md-Tariqul-Islam-CV.pdf"
+                  href="/cv/Tariqul-Resume.pdf"
                   download
                   onClick={() => setOpen(false)}
                   className="flex items-center justify-center gap-2 w-full py-3.5 text-sm font-semibold bg-violet-600 hover:bg-violet-500 text-white rounded-xl shadow-lg shadow-violet-900/40 transition-all cursor-pointer"
